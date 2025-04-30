@@ -1,0 +1,6 @@
+flask
+flask-sqlalchemy
+gunicorn
+openai
+pandas
+email-validator

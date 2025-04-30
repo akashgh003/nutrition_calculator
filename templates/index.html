@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Dish Nutrition Calculator</title>
+    <link rel="stylesheet" href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header text-center mb-5">
+            <h1 class="display-4">Indian Dish Nutrition Calculator</h1>
+            <p class="lead">Enter an Indian dish name to calculate its nutritional value per serving</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Calculate Nutrition</h2>
+                        
+                        {% if error %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ error }}
+                        </div>
+                        {% endif %}
+                        
+                        <form id="dish-form" action="{{ url_for('calculate') }}" method="post">
+                            <div class="mb-3">
+                                <label for="dish-name" class="form-label">Dish Name</label>
+                                <input type="text" class="form-control form-control-lg" id="dish-name" name="dish_name" placeholder="e.g., Paneer Butter Masala" required>
+                                <div class="form-text">Enter the full name of any Indian dish</div>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">Calculate Nutrition</button>
+                            </div>
+                        </form>
+                        
+                        <div id="loading-spinner" class="loading-spinner">
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <p class="mt-2">Fetching recipe and calculating nutrition values...</p>
+                            <p class="small text-muted">This may take a few moments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3 class="card-title">Try these popular dishes:</h3>
+                        <div class="d-flex flex-wrap gap-2 mt-3">
+                            <button class="btn btn-outline-secondary recipe-example" data-dish="Paneer Butter Masala">Paneer Butter Masala</button>
+                            <button class="btn btn-outline-secondary recipe-example" data-dish="Dal Makhani">Dal Makhani</button>
+                            <button class="btn btn-outline-secondary recipe-example" data-dish="Aloo Gobi">Aloo Gobi</button>
+                            <button class="btn btn-outline-secondary recipe-example" data-dish="Chana Masala">Chana Masala</button>
+                            <button class="btn btn-outline-secondary recipe-example" data-dish="Chicken Tikka Masala">Chicken Tikka Masala</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <h3 class="card-title">How it works</h3>
+                        <ol class="mt-3">
+                            <li>Enter any Indian dish name</li>
+                            <li>Our system fetches a generic recipe for the dish</li>
+                            <li>Ingredients are mapped to our nutrition database</li>
+                            <li>Quantities are standardized to household measurements</li>
+                            <li>Nutrition is calculated per standard serving size</li>
+                        </ol>
+                        <div class="alert alert-info">
+                            <h5>Important Note</h5>
+                            <p>Nutrition values are estimations based on standard recipes and may vary based on actual preparation methods and ingredient choices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="mt-5 text-center text-muted">
+            <p>Created by Akash Ghosh</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
