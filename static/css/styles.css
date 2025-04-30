@@ -1,0 +1,121 @@
+/* Main Styling */
+
+.header {
+    margin-bottom: 2rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Background styling for results page */
+.results-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* Background styling for index page */
+body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    /* Add shadow and opacity to cards for better visibility on background image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(33, 37, 41, 0.9);
+}
+
+.results-page .header {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nutrition-highlight {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.ingredient-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.dish-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.nutrition-card {
+    border-left: 5px solid var(--bs-primary);
+}
+
+.error-message {
+    color: var(--bs-danger);
+    margin-top: 10px;
+}
+
+.loading-spinner {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Nutrition Info Cards */
+.macro-card {
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.macro-card:hover {
+    transform: translateY(-5px);
+}
+
+.calories-card {
+    border-left: 5px solid #dc3545;
+}
+
+.protein-card {
+    border-left: 5px solid #0d6efd;
+}
+
+.carbs-card {
+    border-left: 5px solid #ffc107;
+}
+
+.fat-card {
+    border-left: 5px solid #198754;
+}
+
+.fiber-card {
+    border-left: 5px solid #6610f2;
+}
+
+.macro-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.macro-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .macro-card {
+        margin-bottom: 15px;
+    }
+}
