@@ -1,3 +1,7 @@
+"""
+Flask application for nutrition calculation of Indian dishes.
+"""
+
 import os
 import json
 import logging
@@ -21,12 +25,10 @@ nutrition_calculator = NutritionCalculator(NUTRITION_DB_FILE)
 
 @app.route('/')
 def index():
-
     return render_template('index.html')
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
-
     try:
         dish_name = request.form.get('dish_name', '')
         if not dish_name:
@@ -64,7 +66,6 @@ def calculate():
 
 @app.route('/api/calculate', methods=['POST'])
 def api_calculate():
-
     try:
         data = request.get_json()
         
@@ -99,7 +100,6 @@ def api_calculate():
 
 @app.errorhandler(404)
 def page_not_found(e):
-
     return render_template('index.html', error="Page not found"), 404
 
 @app.errorhandler(500)

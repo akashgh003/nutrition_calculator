@@ -1,6 +1,7 @@
 import os
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+
 NUTRITION_DB_FILE = "attached_assets/Assignment Inputs - Nutrition source.csv"
 
 FOOD_CATEGORIES = {
@@ -26,11 +27,11 @@ HOUSEHOLD_MEASUREMENTS = {
     "teaspoon": 5,            
     "piece": 1,              
     "pinch": 0.5,             
-    "handful": 30,            
+    "handful": 30,           
 }
 
 DENSITY_FACTORS = {
-    "Water": 1.0,            
+    "Water": 1.0,             
     "Milk": 1.03,
     "Oil": 0.92,
     "Ghee": 0.91,

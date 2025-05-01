@@ -1,12 +1,9 @@
-/* Main Styling */
-
 .header {
     margin-bottom: 2rem;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Background styling for results page */
 .results-page {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/background.jpg');
     background-size: cover;
@@ -16,7 +13,6 @@
     min-height: 100vh;
 }
 
-/* Background styling for index page */
 body {
     padding-top: 2rem;
     padding-bottom: 2rem;
@@ -30,7 +26,6 @@ body {
 
 .card {
     margin-bottom: 1.5rem;
-    /* Add shadow and opacity to cards for better visibility on background image */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: rgba(33, 37, 41, 0.9);
 }
@@ -71,7 +66,6 @@ body {
     margin-top: 20px;
 }
 
-/* Nutrition Info Cards */
 .macro-card {
     text-align: center;
     padding: 15px;
@@ -113,7 +107,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .macro-card {
         margin-bottom: 15px;
